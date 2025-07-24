@@ -13,7 +13,7 @@
     <?php
     include("../service/produto.service.php");
     $filtro = isset($_POST["filtro"]) ? $_POST["filtro"] : "";
-    listarFuncionario($filtro);
+    listarProduto($filtro);
     ?>
 </body>
 </html>
