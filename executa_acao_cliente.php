@@ -1,4 +1,3 @@
-
 <?php
 include("../../service/cliente.service.php");
 $acao = $_POST['acao'];

@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded",
 (ev) => {
 let formCad = document.getElementById("formCadastroCliente");

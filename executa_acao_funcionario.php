@@ -1,5 +1,4 @@
-executa_acao_funcionario.php
-<?
+<?php
 include("../../service/funcionario.service.php");
 $acao = $_POST['acao'];
 $nome = isset($_POST['nome'])?$_POST['nome']:null;
@@ -21,3 +20,4 @@ echo "Removido com sucesso";
 else {
 echo "Ação inválida";
 }
+?>

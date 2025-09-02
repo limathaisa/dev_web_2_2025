@@ -11,9 +11,9 @@
 <button>Filtrar</button>
 </form>
 <?php
-include("../../service/funcionario.service.php");
+include("../../service/usuario.service.php");
 $filtro = isset($_POST["filtro"])?$_POST["filtro"]:"";
-listarFuncionario($filtro);
+listarUsuario($filtro);
 ?>
 </body>
 </html>
