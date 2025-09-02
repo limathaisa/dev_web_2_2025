@@ -27,3 +27,4 @@ if (charDigitado == "," && campoPreco.value.indexOf(",") < campoPreco.value.leng
 campoPreco.value = campoPreco.value.substring(0, campoPreco.value.length - 1);
 }
 };
+
