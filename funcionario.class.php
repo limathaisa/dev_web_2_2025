@@ -1,4 +1,3 @@
-funcionário.class.php
 <?php
 include("class_pai.class.php");
 class Funcionario extends ClassePai {
@@ -29,8 +28,7 @@ fclose($arquivo);
 function montaLinhaDados()
 {
 return
-$this->id.self::SEPARADOR.$this->nome.self::SEPARADOR.$this->salario.self::SEPARADO
-R.$this->telefone;
+$this->id.self::SEPARADOR.$this->nome.self::SEPARADOR.$this->salario.self::SEPARADOR.$this->telefone;
 }
 static public function listar($filtroNome) {
 $arquivo = fopen("../../db/funcionario.txt", "r");
@@ -49,5 +47,4 @@ return $retorno;
 }
 }
 ?>
-
 

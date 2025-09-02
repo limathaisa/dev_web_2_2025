@@ -1,4 +1,3 @@
-
 <?php
 include_once("class_pai.class.php");
 include_once("cliente.class.php");
@@ -44,7 +43,7 @@ fclose($arquivo);
 //PEGA OS IDS DOS PRODUTOS
 $idsProdutos = array_slice($dados, 4, count($dados));
 return new Venda($dados[0], Cliente::pegaPorId($dados[1]),
-Funcionario::pegaPorId($dados[2]), Produto::pegaPorIds($idsProdutos), $dados[3]);
+Funcionario::pegaPorId($dados[2]), Produto::pegaPorId($idsProdutos), $dados[3]);
 }
 }
 fclose($arquivo);

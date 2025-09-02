@@ -1,4 +1,3 @@
-
 <?php
 include("../../model/produto.class.php");
 function cadastrarProduto($nome, $preco) {

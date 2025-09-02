@@ -1,4 +1,3 @@
-
 <?php
 include("class_pai.class.php");
 class Cliente extends ClassePai {
