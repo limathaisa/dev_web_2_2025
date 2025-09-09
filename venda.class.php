@@ -4,47 +4,49 @@
     include_once("funcionario.class.php");
     include_once("produto.class.php");
     class Venda extends ClassePai {
-        public $cliente;
-        public $vendedor;//tipo Funcionario
-        public $produtosVendidos;
-        public $quantidades;
-        public $valorTotal;
-        public $data;
-        public $modoPagamento;
-        public $desconto;
+    public $cliente;
+    public $vendedor;//tipo Funcionario
+    public $produtosVendidos;
+    public $quantidades;
+    public $valorTotal;
+    public $data;
+    public $modoPagamento;
+    public $desconto;
 
         function montaLinhaDados()
         {
             $idsProdutos = [];
             foreach($this->produtosVendidos as $produto) {
-                if (is_object($produto) && property_exists($produto, 'id')) {
+            if (is_object($produto) && property_exists($produto, 'id')) {
                     $idsProdutos[] = $produto->id;
-                }
+            }
     
-                else if (is_numeric($produto)) {
+             else if (is_numeric($produto)) {
                     $idsProdutos[] = $produto;
-                }
+            }
+                
             }
 
             $linha =
-                $this->id
-                .self::SEPARADOR
-                .$this->cliente
-                .self::SEPARADOR
-                .$this->vendedor
-                .self::SEPARADOR
-                .$this->valorTotal
-                .self::SEPARADOR
-                .$this->data
-                .self::SEPARADOR
-                .$this->modoPagamento
-                .self::SEPARADOR
-                .$this->desconto;
+             $this->id
+             .self::SEPARADOR
+            .$this->cliente
+            .self::SEPARADOR
+            .$this->vendedor
+             .self::SEPARADOR
+            .$this->valorTotal
+            .self::SEPARADOR
+            .$this->data
+            .self::SEPARADOR
+            .$this->modoPagamento
+            .self::SEPARADOR
+            .$this->desconto;
 
                 foreach($idsProdutos as $idProd) {
                     $linha .= self::SEPARADOR . $idProd;
                 }
 
+            
                 foreach($this->quantidades as $qtd) {
                     $linha .= self::SEPARADOR . $qtd;
                 }
@@ -53,15 +55,16 @@
         }
 
         public function __construct($id, $cliente, $vendedor, $produtosVendidos, $quantidades, $valorTotal, $data, $modoPagamento, $desconto) {
-            parent::__construct($id, "../../db/venda.txt");
-            $this->cliente = $cliente;
-            $this->vendedor = $vendedor;
-            $this->produtosVendidos = $produtosVendidos;
-            $this->quantidades = $quantidades;
-            $this->valorTotal = $valorTotal;
-            $this->data = $data;
-            $this->modoPagamento = $modoPagamento;
-            $this->desconto = $desconto;
+           
+        parent::__construct($id, "../../db/venda.txt");
+        $this->cliente = $cliente;
+        $this->vendedor = $vendedor;
+        $this->produtosVendidos = $produtosVendidos;
+     $this->quantidades = $quantidades;
+        $this->valorTotal = $valorTotal;
+        $this->data = $data;
+        $this->modoPagamento = $modoPagamento;
+        $this->desconto = $desconto;
         }
 
         static public function pegaPorId($id) {
@@ -115,3 +118,4 @@
         }
     }
 ?>
+
