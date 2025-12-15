@@ -32,7 +32,7 @@ function Livro(
 }
 
 async function cadastrarExemplar() {
-  const url = "http://localhost/livraria/back/index.php?modulo=livro";
+  const url = "http://localhost/Livraria/index.php?modulo=livro";
 
   const issn = document.querySelector("#novoIssn").value;
   const titulo = document.querySelector("#novoTitulo").value;
