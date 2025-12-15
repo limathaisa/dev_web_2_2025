@@ -61,7 +61,7 @@ async function consultarUsuarios() {
  * Função que deverá listar na tela todos os livros do acervo
  */
 async function listarTodos() {
-  const url = "http://localhost/livraria/back/index.php?modulo=usuario";
+  const url = "http://localhost/Livraria/index.php?modulo=usuario";
   const response = await fetch(url);
   const usuarios = await response.json();
   const div = document.querySelector("#saidaBusca");
