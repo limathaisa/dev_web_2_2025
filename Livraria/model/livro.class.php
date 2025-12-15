@@ -67,19 +67,7 @@ class Livro extends ClassePai {
                 $dados['ISSN']
             );
         }
-        /*$arquivo = fopen("database/livros.txt"
-        , "r");
-        while(!feof($arquivo)){
-            $linha = fgets($arquivo);
-            if(empty($linha))
-                continue;
-            $dados = explode(self::SEPARADOR, $linha);
-            if($dados[0] == $id){
-                fclose($arquivo);
-                return $this->toEntity($dados);
-            }
-        }
-        fclose($arquivo);*/
+        
     }
 
     public function __construct($id, $titulo, $autor, $editora, $anoPublicacao, $genero, $localizacao, $ISSN) {
@@ -94,21 +82,7 @@ class Livro extends ClassePai {
     }
 
     static public function listar($filtroNome, $conn) {
-        /*
-            $arquivo = fopen("database/livros.txt", "r");
-            $retorno = [];
-            while(!feof($arquivo)){
-                $linha = fgets($arquivo);
-                if(empty($linha))
-                    continue;
-                $dados = explode(self::SEPARADOR, $linha);
-                if(str_contains($dados[1], $filtroNome)){
-                    array_push($retorno,$this->toEntity($dados));
-                }
-                
-            }
-            return $retorno;
-            */
+        
         $SQL = "SELECT * FROM livro WHERE titulo LIKE '%$filtroNome%'";
         $resultado = $conn->query($SQL);
         $retorno = [];
